@@ -1,6 +1,6 @@
-# 🛡️ Relatório de Laboratório: Mapeamento de Redes e Enumeração com Nmap
+# Relatório de Laboratório: Mapeamento de Redes e Enumeração com Nmap
 
-## 📊 Informações Gerais
+## Informações Gerais
 * **Curso/Contexto:** Segurança de Redes & Pentesting
 * **Plataformas Utilizadas:** KillerCoda (Ambiente Local) & TryHackMe (Ambiente Alvo)
 * **Quarto Concluído:** Further Nmap
@@ -8,12 +8,12 @@
 
 ---
 
-## 1. 🎯 Introdução e Objetivos
+## 1. Introdução e Objetivos
 Este repositório documenta as atividades práticas de auditoria de segurança, mapeamento de ativos e enumeração de serviços efetuadas no ambiente de laboratório. O objetivo principal foi analisar a postura de segurança de um host local e de um host remoto, aplicando conceitos de varreduras de rede, evasão de firewalls e execução de scripts automatizados através do **Nmap**.
 
 ---
 
-## 2. 🖥️ Análise do Ambiente Local (KillerCoda)
+## 2. Análise do Ambiente Local (KillerCoda)
 Antes de interagir com o sistema alvo, realizou-se um reconhecimento básico da própria infraestrutura de ataque para validar as interfaces e os portos que já se encontravam em escuta.
 
 ### 2.1. Identificação do Endereço IP
@@ -36,11 +36,11 @@ A execução do utilitário de estatísticas de sockets revelou o seguinte mapea
 | **UDP** | `UNCONN` | `172.30.1.2:68` | Cliente DHCP (Configuração Dinâmica de Rede) |
 | **UDP** | `UNCONN` | `[fe80::...]:546` | Cliente DHCPv6 |
 
-> 💡 **Nota:** A presença do SSH na porta padrão (22) e múltiplos serviços utilitários em portas altas é característica de ecossistemas controlados ou laboratórios virtuais de teste baseados em containers.
+> **Nota:** A presença do SSH na porta padrão (22) e múltiplos serviços utilitários em portas altas é característica de ecossistemas controlados ou laboratórios virtuais de teste baseados em containers.
 
 ---
 
-## 3. 🚀 Atividade Prática: Enumeração do Alvo Remoto
+## 3. Atividade Prática: Enumeração do Alvo Remoto
 A segunda fase consistiu em auditar o host remoto fornecido pelo TryHackMe (IP: `10.128.171.118`).
 
 ### 3.1. Deteção de Mecanismos de Firewall e Evasão
@@ -56,7 +56,7 @@ Com as portas abertas mapeadas, utilizou-se o script especializado `ftp-anon.nse
 
 ---
 
-## 4. 🏁 Conclusão
+## 4. Conclusão
 O laboratório demonstrou com sucesso a importância das etapas de reconhecimento e enumeração em auditorias de infraestrutura. Foi possível identificar a topologia local, contornar com sucesso as restrições de filtragem ICMP de uma firewall restritiva através do parâmetro `-Pn` e diagnosticar um host remoto Windows exposto com 5 portas abertas e uma falha grave de configuração de login anónimo no serviço FTP.
 
 ---
