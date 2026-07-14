@@ -167,8 +167,29 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 
 ---
 
-## 4. Conclusão
-O laboratório demonstrou com sucesso a importância das etapas de reconhecimento e enumeração em auditorias de infraestrutura. Foi possível identificar a topologia local, contornar com sucesso as restrições de filtragem ICMP de uma firewall restritiva através do parâmetro `-Pn` e diagnosticar um host remoto Windows exposto com 5 portas abertas e uma falha grave de configuração de login anónimo no serviço FTP.
+## 🏁 4. Considerações Finais e Conclusão Técnica
+
+A execução prática deste laboratório consolidou a importância crítica da fase de **Reconhecimento Ativo e Enumeração** dentro do ciclo de vida de um teste de intrusão profissional (alinhado com frameworks de mercado como o *PTES* e *OWASP*). Esta fase, que frequentemente representa mais de 70% do esforço de uma auditoria, dita diretamente o sucesso ou fracasso das etapas subsequentes de exploração.
+
+### 4.1. Síntese do Vetor de Ataque e Descobertas
+Através da correlação das técnicas de varredura avançadas do Nmap, foi possível traçar um perfil preciso da superfície de ataque exposta pelo host remoto (`10.128.171.118`):
+
+1. **Exposição de Protocolos Críticos:** A presença de portas de partilha de ficheiros (SMB na porta 445 e NetBIOS na porta 139) em conjunto com um servidor FTP (`vsftpd 3.0.3` na porta 21) configura um vetor primário de alto risco para fuga de informação e tentativa de movimentação lateral.
+2. **Deficiência de Configuração (Misconfiguration):** A validação do script `ftp-anon.nse` confirmou que o login anónimo está ativo no FTP. Esta vulnerabilidade permite que agentes não autenticados obtenham acesso direto a ficheiros do servidor ou injetem ficheiros maliciosos na infraestrutura.
+3. **Análise de Sistemas Operativos:** O comportamento anómalo do Xmas Scan (devolvendo pacotes `RST` em todas as portas devido ao não cumprimento da RFC 793 por parte do alvo) revelou uma assinatura clássica da pilha TCP/IP de sistemas operativos baseados em Windows.
+
+### 4.2. Avaliação de Mecanismos de Defesa (Evasão)
+A experimentação prática de técnicas de evasão (como fragmentação de pacotes com `-f` e a utilização de Decoys com `-D`) demonstrou que sistemas de monitorização passivos e firewalls de inspeção de estado simples (*stateless*) podem ser facilmente contornados. 
+
+No entanto, em ambientes corporativos modernos equipados com firewalls de próxima geração (NGFW), sistemas de prevenção de intrusões (IPS) com remontagem automática de fragmentos e ferramentas de EDR, estas tentativas de evasão geram alertas de alta prioridade. Isto reforça que o analista de segurança deve compreender a física dos protocolos (camadas 3 e 4 do modelo OSI) para modelar tráfego que imite o comportamento de utilizadores legítimos.
+
+### 4.3. Recomendações de Segurança (Hardening)
+Com base nas evidências recolhidas neste relatório técnico, recomendam-se as seguintes ações imediatas de mitigação para o ambiente auditado:
+
+* **Desativação de Serviços Desnecessários:** Caso a partilha de ficheiros via SMB/Samba não seja estritamente necessária no host público, os serviços correspondentes devem ser desativados ou isolados em redes internas (*VLANs*).
+* **Remediação do FTP:** Desativar imediatamente o parâmetro de login anónimo no ficheiro de configuração do `vsftpd` (`anonymous_enable=NO`) e forçar a utilização de canais encriptados (SFTP ou FTPS).
+* **Configuração de Firewall Restrita:** Implementar uma política de firewall *Default Drop* na rede perimetral, permitindo comunicações apenas a partir de IPs de origem conhecidos e bloqueando respostas ICMP sistemáticas para mitigar ações de *Host Discovery*.
+* **Atualização de Pacotes (Patch Management):** Atualizar o servidor Apache (`2.4.29`) e o OpenSSH (`7.6p1`) para as suas versões estáveis mais recentes, reduzindo a exposição a CVEs de execução remota de código (RCE) conhecidas.
 
 ---
-_Relatório gerado para fins educacionais e de composição de portfólio de segurança._
+> **Nota de Encerramento:** Este documento serve como evidência de aptidão técnica para auditorias de segurança ofensiva, respeitando as boas práticas de documentação, confidencialidade de dados e clareza analítica em relatórios de pentesting.
