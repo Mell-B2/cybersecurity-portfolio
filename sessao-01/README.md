@@ -87,6 +87,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **Objetivo:** Realizar um mapeamento rápido e furtivo das portas abertas no host alvo.
 * **O que foi feito:** Execução do comando `nmap -sS -Pn 10.128.171.118`.
 * **Fundamentação Técnica:** Este método é conhecido como "Half-open Scan". O Nmap envia um pacote com a flag `SYN` ativa. Se o alvo responder com `SYN-ACK` (porta aberta), o atacante responde de imediato com um pacote `RST` (Reset) em vez de fechar o circuito com um `ACK`. Isto evita que a conexão TCP seja totalmente completada (3-way handshake), o que historicamente impedia o registo da atividade nos logs da aplicação alvo.
+
 ![Tarefa 3](../Tarefa3.png)
 
 ---
