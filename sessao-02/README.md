@@ -55,6 +55,13 @@ A análise inicial focou-se no diretório `/var/log/apache2/`. Através da inspe
 *   **Comando Executado:** `awk -F'"' '{print $6}' access.log | sort | uniq` (Isolou as assinaturas de *User-Agents*).
 *   **Conclusão:** Foram detetadas 2 ferramentas de scan. O varrimento automatizado do Nmap procurou ativamente a string `/nmaplowercheck1681912425` à hora exata `13:30:15`.
 
+*   #### Auditoria Avançada do Sistema de Autenticação (`auth.log`)
+Alinhando com os requisitos de auditoria forense em sistemas Linux, foram escrutinados os eventos de acesso do sistema em `/var/log/auth.log` através dos seguintes comandos estruturados:
+* **Comando para isolar tentativas falhadas:** `grep "Failed password" auth.log`
+* **Comando para extrair, contar e ordenar a origem dos ataques:** `grep "Failed password" auth.log | awk '{print $11}' | sort | uniq -c | sort -nr`
+* **Comando para validar a quebra do perímetro (Login com Sucesso):** `grep -E "Accepted password|Accepted publickey" auth.log`
+* **Conclusão:** O endereço IP hostil `192.168.56.24` foi identificado estatisticamente como a origem com o maior volume de conexões falhadas (ataque de força bruta), culminando no acesso bem-sucedido à conta do utilizador `fred` às `13:30:15`.
+
 ### Tarefa 3: Vetor de Inclusão e Upload
 A auditoria focou-se nas páginas web interativas capazes de aceitar payloads do cliente.
 *   **Evidência:** O ficheiro `contact.php` foi identificado como o ponto vulnerável que permitia o upload indiscriminado de ficheiros para a infraestrutura por parte do IP remoto `192.168.56.24`. Um aviso de segurança mal estruturado exposto pelo administrador `Fred` facilitou a descoberta do ambiente pelo atacante.
@@ -83,14 +90,21 @@ A fase final envolveu a reconstituição das ações pós-exploração executada
 192.168.56.24 - - [19/Jul/2026:13:30:15 +0100] "GET /nmaplowercheck1681912425 HTTP/1.1" 404 492 "-" "Nmap Scripting Engine"
 ```
 
-### B. Evidência de Criação da Conta Maliciosa (`/etc/passwd`)
+### B. Amostra de Logs de Autenticação SSH Falhada e Bem-Sucedida (`/var/log/auth.log`)
+```text
+Jul 19 13:28:10 server sshd[2104]: Failed password for invalid user admin from 192.168.56.24 port 43210 ssh2
+Jul 19 13:29:02 server sshd[2108]: Failed password for fred from 192.168.56.24 port 43216 ssh2
+Jul 19 13:30:15 server sshd[2140]: Accepted password for fred from 192.168.56.24 port 43222 ssh2
+```
+
+### C. Evidência de Criação da Conta Maliciosa (`/etc/passwd`)
 ```text
 root:x:0:0:root:/root:/bin/bash
 fred:x:1001:1001:Fred,,,:/home/fred:/bin/bash
 root2:x:0:0:Malicious Account:/root:/bin/bash
 ```
 
-### C. Registo do Ficheiro Autorizado SSH (`/root/.ssh/authorized_keys`)
+### D. Registo do Ficheiro Autorizado SSH (`/root/.ssh/authorized_keys`)
 ```text
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCs... atacante@localhost kali@kali
 ```
