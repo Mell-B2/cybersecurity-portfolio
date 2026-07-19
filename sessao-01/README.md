@@ -37,7 +37,7 @@ Antes de interagir com o sistema alvo, realizou-se um reconhecimento básico da 
 
 ### 2.1. Identificação do Endereço IP
 
-![](../ip%20a.png)
+![](ip%20a.png)
 
 Através do comando `ip a`, mapeou-se a seguinte configuração:
 * **Interface Ativa:** `enp1s0`
@@ -45,7 +45,7 @@ Através do comando `ip a`, mapeou-se a seguinte configuração:
 
 ### 2.2. Portas e Serviços em Escuta (Output do `ss -tuln`)
 
-![](../ss.png)
+![](ss.png)
 
 A execução do utilitário de estatísticas de sockets revelou o seguinte mapeamento de portas ativas na máquina local:
 
@@ -76,7 +76,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Inicialização do ecossistema de virtualização do TryHackMe. O alvo remoto (`10.128.171.118`) foi provisionado juntamente com a máquina de ataque (AttackBox - `10.128.190.48`).
 * **Fundamentação Técnica:** O estabelecimento desta linha de base de endereçamento IP previne a dispersão de tráfego nocivo na rede pública e assegura que todo o tráfego gerado nos passos seguintes pertença estritamente ao âmbito autorizado.
 
-![](../Tarefa1.png)
+![](Tarefa1.png)
 
 ---
 
@@ -85,7 +85,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Estudo conceitual sobre as categorias de portas: Portas Bem Conhecidas (0-1023), Portas Registadas (1024-49151) e Portas Dinâmicas/Privadas (49152-65535).
 * **Fundamentação Técnica:** Compreender esta divisão é vital para identificar de forma preliminar anomalias na infraestrutura (por exemplo, um serviço crítico como SSH a correr numa porta não padrão como a 4444 para tentar evasão).
 
-![](../Tarefa2.png)
+![](Tarefa2.png)
 
 ---
 
@@ -94,7 +94,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sS -Pn 10.128.171.118`.
 * **Fundamentação Técnica:** Este método é conhecido como "Half-open Scan". O Nmap envia um pacote com a flag `SYN` ativa. Se o alvo responder com `SYN-ACK` (porta aberta), o atacante responde de imediato com um pacote `RST` (Reset) em vez de fechar o circuito com um `ACK`. Isto evita que a conexão TCP seja totalmente completada (3-way handshake), o que historicamente impedia o registo da atividade nos logs da aplicação alvo.
 
-![](../Tarefa3.png)
+![](Tarefa3.png)
 
 ---
 
@@ -103,7 +103,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sT 10.128.171.118`.
 * **Fundamentação Técnica:** Ao contrário do SYN Scan, este método utiliza a chamada de sistema `connect()` do próprio sistema operativo para completar todo o processo de aperto de mão de três vias (`SYN` -> `SYN-ACK` -> `ACK`). É um método muito menos furtivo, pois cria uma conexão legítima e deixa marcas evidentes nos logs dos serviços, mas é altamente confiável e não exige privilégios de `root` para manipular pacotes crus (raw sockets).
 
-![](../Tarefa4.png)
+![](Tarefa4.png)
 
 ---
 
@@ -112,7 +112,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sU 10.128.171.118`.
 * **Fundamentação Técnica:** O protocolo UDP é orientado a mensagens sem conexão (stateless). Quando o Nmap envia um pacote UDP vazio para uma porta aberta, na maioria das vezes o serviço não responde (ficando classificado como `open|filtered`). No entanto, se a porta estiver fechada, o sistema operacional do alvo tipicamente responde com uma mensagem de erro ICMP do tipo 3 (Port Unreachable). Devido à necessidade de processamento e limites de velocidade (*rate-limiting*) de pacotes ICMP, este tipo de varredura é significativamente mais lento do que as varreduras TCP.
 
-![](../Tarefa5.png)
+![](Tarefa5.png)
 
 ---
 
@@ -121,7 +121,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sN 10.128.171.118`.
 * **Fundamentação Técnica:** De acordo com a especificação técnica RFC 793 para o protocolo TCP, qualquer pacote enviado para uma porta fechada deve ser respondido com um pacote `RST`. Se a porta estiver aberta, o pacote sem flags (`NULL`) deve simplesmente ser descartado sem resposta. Isto permite deduzir o estado da porta contornando firewalls simples que analisam apenas conexões iniciadas por pacotes `SYN`.
 
-![](../Tarefa6.png)
+![](Tarefa6.png)
 
 ---
 
@@ -130,7 +130,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sF 10.128.171.118`.
 * **Fundamentação Técnica:** Este teste envia um pacote contendo unicamente a flag `FIN` (utilizada teoricamente para fechar conexões). Seguindo as mesmas diretrizes da RFC 793, as portas fechadas respondem obrigatoriamente com um pacote `RST`, enquanto as portas abertas ignoram o pacote recebido. É altamente eficaz contra sistemas operacionais Unix/Linux baseados em padrões rígidos de rede.
 
-![](../Tarefa7.png)
+![](Tarefa7.png)
 
 ---
 
@@ -139,7 +139,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sX 10.128.171.118`.
 * **Fundamentação Técnica:** Esta varredura define em simultâneo as flags `FIN`, `PSH` (Push) e `URG` (Urgent), fazendo com que o pacote pareça "iluminado como uma árvore de Natal". O princípio é idêntico ao NULL e FIN scans: portas fechadas devolvem um `RST` e abertas ignoram o pacote. No entanto, o sistema operativo Windows ignora esta RFC e responde com um `RST` para qualquer pacote Xmas, independentemente de a porta estar aberta ou fechada, gerando falsos-positivos que nos permitem identificar sistemas Windows na rede.
 
-![](../Tarefa8.png)
+![](Tarefa8.png)
 
 ---
 
@@ -148,7 +148,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sA 10.128.171.118`.
 * **Fundamentação Técnica:** Ao contrário de outras varreduras, o ACK Scan não serve para determinar se uma porta está aberta ou fechada. Ele envia um pacote com a flag `ACK` ativada. Se o alvo responder com um pacote `RST`, significa que a porta não está filtrada (está acessível). Se não houver resposta ou se for devolvido um erro ICMP, a porta é classificada como `filtered`, indicando a presença de um firewall ativo a mitigar o tráfego.
 
-![](../Tarefa9.png)
+![](Tarefa9.png)
 
 ---
 
@@ -157,7 +157,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do comando `nmap -sW 10.128.171.118`.
 * **Fundamentação Técnica:** Este scan examina o campo *TCP Window Size* dos pacotes `RST` recebidos. Em certos sistemas operativos específicos, o tamanho desta janela de tamanho de dados é positivo (maior que zero) se a porta estiver aberta, e é exatamente zero se a porta estiver fechada, servindo como um refinamento cirúrgico de mapeamento de portas filtradas.
 
-![](../Tarefa10.png)
+![](Tarefa10.png)
 
 ---
 
@@ -166,7 +166,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução de comandos utilizando o parâmetro avançado `--scanflags` (ex: `--scanflags SYNFIN`).
 * **Fundamentação Técnica:** Softwares de defesa detetam frequentemente padrões clássicos (como apenas pacotes `SYN`). Ao definirmos manualmente combinações bizarras de flags que não ocorrem no tráfego normal de rede, podemos ultrapassar sistemas de deteção baseados em regras rígidas de assinatura.
 
-![](../Tarefa11.png)
+![](Tarefa11.png)
 
 ---
 
@@ -174,7 +174,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Configuração e execução do Nmap recorrendo aos parâmetros `-S` (IP Spoofing) e `-D` (Decoys).
 * **Fundamentação Técnica:** O parâmetro `-D` (Decoys) permite-nos inundar o sistema de logs do alvo com múltiplos IPs falsos misturados com o nosso IP real (ex: `nmap -D IP1,IP2,MEU_IP 10.128.171.118`). O administrador do sistema alvo verá tráfego de varredura vindo de várias fontes distintas ao mesmo tempo, tornando a atribuição e análise forense do ataque muito mais complexa e difícil de isolar.
 
-![](../Tarefa12.png)
+![](Tarefa12.png)
 
 ---
 
@@ -183,7 +183,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Utilização de parâmetros avançados como `-f` e a definição de MTU específica `--mtu 8`.
 * **Fundamentação Técnica:** Ao fragmentar o pacote em blocos mínimos de 8 bytes, dividimos o cabeçalho TCP (normalmente de 20 bytes) em vários fragmentos IP distintos. Firewalls antigos e sistemas de IPS simples que não reagrupam os pacotes antes de os analisar não conseguem correlacionar as flags ativas, permitindo que o nosso tráfego passe sem ser bloqueado ou alertado pelas políticas de segurança.
 
-![](../Tarefa13.png)
+![](Tarefa13.png)
 
 ---
 
@@ -192,7 +192,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Execução do Nmap especificando scripts direcionados, como `--script=ftp-anon` ou `--script=default,safe`.
 * **Fundamentação Técnica:** O motor NSE automatiza tarefas complexas como adivinhação de senhas brutas (*brute-forcing*), testes de portas para vulnerabilidades severas específicas e auditorias de configuração (por exemplo, detetando se o servidor FTP admite login anónimo com o utilizador `anonymous`), agregando inteligência ativa à simples descoberta de portas.
 
-![](../Tarefa14.png)
+![](Tarefa14.png)
 
 ---
 
@@ -201,7 +201,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 * **O que foi feito:** Utilização dos parâmetros de output avançados do Nmap, nomeadamente `-oN` (formato humano) e `-oX` (formato estruturado XML).
 * **Fundamentação Técnica:** Os outputs gerados (especialmente o XML) são de suma importância numa cadeia de testes de intrusão, permitindo importar os resultados diretamente para bases de dados centrais ou outras ferramentas de auditoria e exploração (como o Metasploit Framework ou relatórios executivos finais para o cliente).
 
-![](../Tarefa15.png)
+![](Tarefa15.png)
 
 ---
 
