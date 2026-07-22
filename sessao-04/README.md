@@ -80,6 +80,8 @@ Foram utilizados critérios como:
 
 A utilização destas ferramentas permitiu compreender a organização hierárquica do sistema de ficheiros Linux e localizar rapidamente informação relevante.
 
+![Evidência Tarefa 2](Tarefa%202.png)
+
 ---
 
 ## Tarefa 3 - Gestão e Manipulação de Ficheiros
@@ -95,6 +97,8 @@ Foram executadas operações fundamentais de administração do sistema de fiche
 
 Adicionalmente foram utilizadas ferramentas de transferência de ficheiros entre diferentes sistemas Linux.
 
+![Evidência Tarefa 3](Tarefa%203.png)
+
 ---
 
 ## Tarefa 4 - Introdução aos Hashes Criptográficos
@@ -108,6 +112,9 @@ Esta atividade incidiu sobre funções de hash criptográfico, nomeadamente:
 Foi demonstrado que estas funções produzem valores unidirecionais utilizados para garantir a integridade da informação.
 
 Posteriormente foram aplicadas técnicas de força bruta e ataques por dicionário para recuperar palavras-passe a partir dos respetivos hashes.
+
+![Evidência Tarefa 4](Tarefa%204.png)
+![Evidência Tarefa 4.1](Tarefa%204.1.png)
 
 ---
 
@@ -126,6 +133,8 @@ Foi igualmente reforçada a diferença entre:
 - **Codificação**, utilizada para representação de dados;
 - **Criptografia**, utilizada para garantir confidencialidade.
 
+![Evidência Tarefa 5](Tarefa%205.png)
+
 ---
 
 ## Tarefa 6 - Criptografia Simétrica com GPG
@@ -139,6 +148,8 @@ Durante a atividade foram executadas operações de:
 - validação da frase-passe.
 
 A cifra utilizada foi baseada no algoritmo **AES-128**, permitindo proteger eficazmente os ficheiros contra acessos não autorizados.
+
+![Evidência Tarefa 6](Tarefa%206.png)
 
 ---
 
@@ -154,6 +165,8 @@ Foram utilizadas as ferramentas:
 O objetivo consistiu em recuperar a palavra-passe utilizada para proteger um ficheiro encriptado através de ataques por dicionário.
 
 A atividade permitiu compreender a importância da utilização de palavras-passe fortes e resistentes a ataques automatizados.
+
+![Evidência Tarefa 7](Tarefa%207.png)
 
 ---
 
@@ -172,6 +185,9 @@ Entre as operações realizadas destacam-se:
 
 Esta atividade demonstrou a integração entre administração Linux e gestão de bases de dados.
 
+![Evidência Tarefa 8](Tarefa%208.png)
+![Evidência Tarefa 8.1](Tarefa%208.1.png)
+
 ---
 
 ## Tarefa 9 - Desafio Final e Elevação de Privilégios
@@ -187,6 +203,8 @@ Foram realizadas operações de:
 - obtenção de acesso administrativo (root).
 
 A conclusão desta tarefa demonstrou a capacidade de aplicar múltiplas técnicas de administração e auditoria de sistemas Linux de forma encadeada.
+
+![Evidência Tarefa 9](Tarefa%209.png)
 
 ---
 
@@ -314,6 +332,8 @@ Estas medidas reduzem significativamente a superfície de ataque do servidor e a
 A realização da **Sessão 04 — Hardening de SSH e Auditoria de Sistemas Linux** permitiu consolidar conhecimentos fundamentais de administração segura de sistemas Linux.
 
 A resolução integral do laboratório **Linux Strength Training**, disponibilizado pela plataforma TryHackMe, confirmou a capacidade de manipular o sistema de ficheiros, trabalhar com mecanismos criptográficos, administrar bases de dados e compreender técnicas básicas de auditoria de segurança.
+
+![Conclusão da Sala](Conclusão.png)
 
 Posteriormente foi efetuado o endurecimento do serviço **OpenSSH**, através da implementação de mecanismos modernos de autenticação e da eliminação de configurações consideradas inseguras.
 
