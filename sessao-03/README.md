@@ -1,4 +1,4 @@
-# Laboratório 3 — Hardening de Redes Linux e Configuração de Firewalls
+# Laboratório 3 - Hardening de Redes Linux e Configuração de Firewalls
 
 **Curso:** Reskilling  
 **Módulo:** Linux e Cibersegurança  
