@@ -2,7 +2,7 @@
 
 **Curso:** Reskilling  
 **Módulo:** Linux e Cibersegurança  
-**Objetivo de Aprendizagem:** OA3 – Aplicar  
+**Objetivo de Aprendizagem:** OA3 - Aplicar  
 **Formador:** Péricles Borges  
 **Aluno:** Melissa Simone Lima Baptista  
 **Data:** 20/07/2026
