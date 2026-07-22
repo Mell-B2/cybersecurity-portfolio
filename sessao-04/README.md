@@ -61,6 +61,8 @@ Foi iniciada a máquina virtual disponibilizada pela plataforma **TryHackMe**, e
 
 Esta fase teve como objetivo preparar o ambiente para a execução das restantes atividades, validando a conectividade e garantindo que todos os serviços necessários estavam operacionais.
 
+![Evidência Tarefa 1](Tarefa%201.png)
+
 ---
 
 ## Tarefa 2 - Navegação e Localização no Sistema de Ficheiros
