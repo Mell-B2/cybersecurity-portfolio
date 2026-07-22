@@ -2,10 +2,10 @@
 
 | Parâmetro | Especificação Técnica |
 |-----------|-----------------------|
-| **Módulo / Projeto** | Reskilling — Linux & Cibersegurança |
-| **Sessão / Laboratório** | Sessão 04 — Gestão e Fortalecimento de Acessos Remotos (SSH) |
+| **Módulo / Projeto** | Reskilling - Linux & Cibersegurança |
+| **Sessão / Laboratório** | Sessão 04 - Gestão e Fortalecimento de Acessos Remotos (SSH) |
 | **Nível de Aprendizagem** | OA4 · Aplicar & Avaliar |
-| **Ambiente Virtual** | TryHackMe — Linux Strength Training *(100% concluído)* |
+| **Ambiente Virtual** | TryHackMe - Linux Strength Training *(100% concluído)* |
 | **Utilizador / Autor** | mbaptista |
 | **Formador** | Péricles Borges |
 
