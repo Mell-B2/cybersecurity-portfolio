@@ -333,7 +333,7 @@ A realização da **Sessão 04 — Hardening de SSH e Auditoria de Sistemas Linu
 
 A resolução integral do laboratório **Linux Strength Training**, disponibilizado pela plataforma TryHackMe, confirmou a capacidade de manipular o sistema de ficheiros, trabalhar com mecanismos criptográficos, administrar bases de dados e compreender técnicas básicas de auditoria de segurança.
 
-![Conclusão da Sala](Conclusão.png)
+![Conclusão da Sala](conclusao.png)
 
 Posteriormente foi efetuado o endurecimento do serviço **OpenSSH**, através da implementação de mecanismos modernos de autenticação e da eliminação de configurações consideradas inseguras.
 
