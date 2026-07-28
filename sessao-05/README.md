@@ -84,6 +84,27 @@ O Lynis apresentou diversas recomendações de melhoria relacionadas com autenti
 
 ---
 
+## Evidência da Auditoria
+
+Abaixo apresenta-se um excerto da saída produzida pela ferramenta **Lynis** durante a auditoria ao sistema.
+
+```text
+Hardening index : 60
+
+Warnings : 1
+
+Suggestions : 50
+
+FILE-6310
+To decrease the impact of a full /home file system,
+place /home on a separate partition.
+
+FILE-6310
+To decrease the impact of a full /tmp file system,
+place /tmp on a separate partition.
+```
+
+---
 # 5. Análise das Vulnerabilidades (Filesystem)
 
 Foram selecionadas duas recomendações da categoria **Filesystem** para análise técnica.
@@ -171,20 +192,24 @@ As recomendações relacionadas com o sistema de ficheiros representam medidas p
 
 ---
 
-# 7. Conclusão
+## Conclusão
 
-A utilização da ferramenta Lynis permitiu realizar uma avaliação detalhada da segurança do sistema Ubuntu.
+A auditoria realizada com o Lynis permitiu avaliar o nível de segurança do sistema Ubuntu, identificando vulnerabilidades e oportunidades de melhoria através da aplicação de técnicas de hardening.
 
-O sistema obteve um **Hardening Score de 60**, indicando que existem diversas oportunidades de melhoria para alcançar um nível de segurança mais elevado.
+O sistema obteve um **Hardening Score de 60**, tendo sido identificado **1 Warning** e **50 Suggestions**, demonstrando que, embora o sistema seja funcional, existem várias recomendações para reforçar a sua segurança.
 
-Entre as recomendações analisadas, destacou-se a necessidade de separar os diretórios **/home** e **/tmp** em partições independentes, uma prática amplamente recomendada pelos CIS Benchmarks por aumentar a resiliência do sistema, melhorar a gestão do armazenamento e reduzir potenciais vetores de ataque.
+Foram analisadas duas vulnerabilidades da categoria **Filesystem**, relacionadas com a separação das partições **/home** e **/tmp**. A implementação destas medidas contribui para aumentar a disponibilidade, a integridade e a proteção do sistema operativo.
 
-Este laboratório permitiu compreender a importância das auditorias de segurança em sistemas Linux e demonstrou como ferramentas automáticas podem apoiar a implementação de medidas de hardening e conformidade com boas práticas internacionais.
+Este laboratório permitiu consolidar conhecimentos sobre auditoria de segurança em Linux, utilização da ferramenta Lynis e aplicação de boas práticas de hardening recomendadas para ambientes profissionais.
 
 ---
 
 # Referências
 
-- CISOfy. *Lynis Security Auditing Tool*. https://cisofy.com
-- CIS Benchmarks. *Linux Security Guidelines*. https://www.cisecurity.org/cis-benchmarks
-- Ubuntu Documentation. https://ubuntu.com/server/docs
+1. CISOfy. *Lynis Security Auditing Tool*. Disponível em: https://cisofy.com/lynis/
+
+2. Ubuntu Documentation. *Ubuntu Server Guide*. Disponível em: https://ubuntu.com/server/docs
+
+3. CIS Benchmarks. *Linux Security Benchmarks*. Disponível em: https://www.cisecurity.org/cis-benchmarks
+
+4. Linux Foundation. *Linux Documentation Project*. Disponível em: https://tldp.org/
