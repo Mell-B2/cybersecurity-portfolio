@@ -1413,6 +1413,8 @@ Captura mostrando:
 - máquina iniciada;
 - IP atribuído.
 
+![Deploy da Máquina](./Task%201.png)
+
 ---
 
 ## 2. Primeiro acesso SSH
@@ -1423,6 +1425,8 @@ Mostrar:
 ssh agent47@IP
 ```
 
+![Acesso SSH](./Task%202.png)
+
 ---
 
 ## 3. Progressão Linux Fundamentals
@@ -1431,6 +1435,10 @@ Adicionar evidências:
 
 - Mission 30;
 - Viktor.
+
+![Resumo Task 3](./Task%203.png)
+![Evidências Mission 30](./Task%203.1.png)
+![Evidências Viktor](./Task%203.2.png)
 
 ---
 
@@ -1443,6 +1451,26 @@ sudo -l
 
 find / -perm -4000
 ```
+
+![Comandos Sudo e SUID](./Task4.png)
+
+---
+
+## 5. Flags Finais
+
+Adicionar:
+
+```text
+user.txt
+```
+
+e
+
+```text
+root.txt
+```
+
+![Conclusão da Sala](./conclusao%20.png)
 
 ---
 
