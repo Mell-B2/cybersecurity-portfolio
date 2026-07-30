@@ -817,17 +817,6 @@ permitiu transformar um acesso inicial limitado em controlo administrativo total
 
 ---
 
-**Continua na Parte 3:**
-- Análise Técnica das Vulnerabilidades
-- Recomendações de Hardening
-- CIS Benchmarks
-- SSH Hardening
-- UFW
-- Lynis
-- Lições Aprendidas
-- Conclusão Técnica
-- Referências
-
 # 9. Análise Técnica das Vulnerabilidades Encontradas
 
 Após a conclusão da exploração controlada do ambiente Linux Agency, foi realizada uma análise técnica das principais falhas de segurança identificadas.
