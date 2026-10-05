@@ -20,7 +20,7 @@ O portfólio está organizado em sessões práticas, permitindo apresentar de fo
 
 > 🎯 O objetivo deste repositório é educativo: demonstrar a minha aprendizagem técnica, experiência prática e evolução no desenvolvimento de competências em cibersegurança, através de ambientes laboratoriais controlados.
 
----
+
 
 ## 🎯 Objetivos
 
@@ -32,7 +32,7 @@ O portfólio está organizado em sessões práticas, permitindo apresentar de fo
 - Aplicar conceitos de cibersegurança de forma responsável;
 - Construir um portfólio organizado das atividades práticas realizadas.
 
----
+
 
 ## 🛠️ Ferramentas e Tecnologias
 
@@ -45,47 +45,57 @@ O portfólio está organizado em sessões práticas, permitindo apresentar de fo
 
 </div>
 
----
+
 
 ## 📂 Estrutura do Portfólio
 
-O repositório encontra-se organizado em seis sessões práticas:
+O portfólio encontra-se organizado em seis sessões laboratoriais, que documentam a evolução das competências desenvolvidas ao longo da formação.
 
-| Sessão | Documentação |
-|---|---|
-| 🔎 Sessão 01 | [Aceder à Sessão 01](./sessao-01/) |
-| 🌐 Sessão 02 | [Aceder à Sessão 02](./sessao-02/) |
-| 🔐 Sessão 03 | [Aceder à Sessão 03](./sessao-03/) |
-| 🛡️ Sessão 04 | [Aceder à Sessão 04](./sessao-04/) |
-| 🔍 Sessão 05 | [Aceder à Sessão 05](./sessao-05/) |
-| 💻 Sessão 06 | [Aceder à Sessão 06](./sessao-06/) |
+| Sessão | Laboratório | Competências Desenvolvidas |
+|:---:|---|---|
+|[01](./sessao-01/) | **Mapeamento de Redes e Enumeração com Nmap** | Reconhecimento de redes, identificação de hosts, portas, serviços e versões |
+|[02](./sessao-02/) | **Análise Forense e Auditoria Avançada** | Análise de logs, investigação forense, identificação de incidentes e persistência |
+|[03](./sessao-03/) | **Hardening de Redes Linux e Configuração de Firewalls** | UFW, iptables, políticas de firewall e controlo de tráfego |
+|[04](./sessao-04/) | **Hardening de SSH e Auditoria de Sistemas Linux** | OpenSSH, autenticação segura, controlo de acessos e hardening |
+|[05](./sessao-05/) | **Análise de Vulnerabilidades em Linux com Lynis** | Auditoria de segurança, identificação de vulnerabilidades e recomendações de hardening |
+|[06](./sessao-06/) | **Auditoria & PenTest — Linux Agency** | PenTest, escalada de privilégios, auditoria técnica e hardening |
 
-Cada sessão contém a respetiva documentação técnica, evidências das atividades realizadas e conclusões.
+> 📌 Cada sessão contém documentação técnica das atividades realizadas, metodologia aplicada, resultados, evidências laboratoriais e respetivas conclusões.
 
----
 
 ## 🧪 Áreas Exploradas
 
-Ao longo das atividades práticas, foram exploradas diferentes áreas relacionadas com a cibersegurança:
+As atividades laboratoriais permitiram explorar diferentes domínios da cibersegurança, combinando análise técnica, segurança defensiva, auditoria e investigação de sistemas.
 
-`Mapeamento de Redes` • `Enumeração de Serviços` • `Segurança de Redes` • `Auditoria de Sistemas` • `Autenticação` • `SSH` • `Análise de Segurança`
+| Área | Conhecimentos e Práticas |
+|---|---|
+| **Segurança de Redes** | Mapeamento de redes, identificação de hosts, análise de portas e enumeração de serviços |
+| **Reconhecimento & Enumeração** | Utilização do Nmap para descoberta e análise de serviços, versões e superfícies de exposição |
+| **Hardening de Sistemas** | Reforço da segurança de sistemas Linux, redução da superfície de ataque e aplicação de configurações seguras |
+| **Firewalls & Controlo de Tráfego** | Configuração e análise de políticas de segurança através de UFW e iptables |
+| **Segurança SSH & Autenticação** | Proteção do acesso remoto, autenticação segura e controlo de privilégios |
+| **Análise Forense** | Análise de logs e artefactos do sistema para identificação e investigação de incidentes |
+| **Auditoria de Segurança** | Avaliação de configurações e vulnerabilidades em ambientes Linux com ferramentas como Lynis |
+| **PenTest** | Avaliação prática de segurança, identificação de vulnerabilidades e análise de escalada de privilégios |
 
----
+> 💡 Estas áreas representam competências desenvolvidas em ambientes laboratoriais controlados, com foco na aprendizagem prática e na aplicação responsável de técnicas de cibersegurança.
 
 ## 📚 Competências Desenvolvidas
 
-A realização das atividades práticas tem contribuído para o desenvolvimento de competências em:
+Ao longo das sessões laboratoriais, desenvolvi competências técnicas e analíticas que me permitiram aplicar, de forma prática, conceitos fundamentais de cibersegurança.
 
-- Reconhecimento e análise de redes;
-- Identificação de hosts, portas e serviços;
-- Interpretação de resultados de análises de segurança;
-- Utilização de ambientes Linux;
-- Auditoria de sistemas;
-- Documentação técnica de atividades de cibersegurança;
-- Utilização de Git e GitHub para controlo de versões;
-- Pensamento analítico e resolução de problemas.
+- **Análise de redes e serviços** - identificação de hosts, portas abertas, serviços e versões;
+- **Avaliação de segurança** - análise de configurações, vulnerabilidades e potenciais superfícies de ataque;
+- **Hardening de sistemas Linux** - aplicação de medidas de proteção em SSH, firewalls e controlo de acessos;
+- **Análise forense e de logs** - interpretação de evidências digitais e identificação de atividades relevantes para investigação;
+- **Utilização de ferramentas de segurança** - experiência prática com Nmap, Lynis, UFW e iptables;
+- **Análise e interpretação de resultados** - avaliação dos resultados obtidos em auditorias e testes de segurança;
+- **Documentação técnica** - elaboração de relatórios estruturados com metodologia, evidências, resultados e conclusões;
+- **Pensamento analítico e resolução de problemas** - desenvolvimento de uma abordagem sistemática perante diferentes cenários laboratoriais de segurança.
 
----
+> 🎯 Estas competências refletem a evolução do meu percurso de aprendizagem, combinando conhecimentos teóricos com experiência prática em ambientes laboratoriais controlados.
+
+
 
 ## ⚖️ Utilização Ética
 
@@ -93,30 +103,16 @@ Todas as atividades documentadas neste repositório foram realizadas para **fins
 
 As ferramentas, técnicas e procedimentos apresentados devem ser utilizados apenas em sistemas e ambientes para os quais exista autorização explícita.
 
----
 
-## 👩‍💻 Autora
-
-<div align="center">
-
-### Melissa Baptista
-
-**Cibersegurança • Tecnologia • Aviação**
-
-Aprender, experimentar e desenvolver competências práticas através da tecnologia.
-
-<br>
-
-<a href="https://github.com/Mell-B2">
-  <img src="https://img.shields.io/badge/GitHub-Mell--B2-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-</div>
-
----
 
 <div align="center">
 
 ### 🔐 Aprender • Testar • Documentar • Evoluir
+
+**Portfólio de aprendizagem em Cibersegurança**
+
+Documentação de atividades práticas desenvolvidas em ambientes laboratoriais controlados.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Mell--B2-181717?logo=github)](https://github.com/Mell-B2)
 
 </div>
