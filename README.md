@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔐 Portfólio de Cibersegurança
+# Portfólio de Cibersegurança
 
 ### Segurança de Redes • Auditoria de Sistemas • Cibersegurança
 
@@ -12,17 +12,17 @@
 
 ---
 
-## 👩‍💻 Sobre este Portfólio
+## Sobre este Portfólio
 
 Este repositório documenta o meu percurso de aprendizagem prática em **Cibersegurança**, com foco na análise de redes, enumeração de serviços, auditoria de sistemas e avaliação de segurança.
 
 O portfólio está organizado em sessões práticas, permitindo apresentar de forma estruturada as metodologias, ferramentas, evidências e conclusões obtidas ao longo dos diferentes exercícios laboratoriais.
 
-> 🎯 O objetivo deste repositório é educativo: demonstrar a minha aprendizagem técnica, experiência prática e evolução no desenvolvimento de competências em cibersegurança, através de ambientes laboratoriais controlados.
+> O objetivo deste repositório é educativo: demonstrar a minha aprendizagem técnica, experiência prática e evolução no desenvolvimento de competências em cibersegurança, através de ambientes laboratoriais controlados.
 
 
 
-## 🎯 Objetivos
+## Objetivos
 
 - Desenvolver competências práticas em cibersegurança;
 - Compreender técnicas de reconhecimento e mapeamento de redes;
@@ -34,7 +34,7 @@ O portfólio está organizado em sessões práticas, permitindo apresentar de fo
 
 
 
-## 🛠️ Ferramentas e Tecnologias
+## Ferramentas e Tecnologias
 
 <div align="center">
 
@@ -47,7 +47,7 @@ O portfólio está organizado em sessões práticas, permitindo apresentar de fo
 
 
 
-## 📂 Estrutura do Portfólio
+## Estrutura do Portfólio
 
 O portfólio encontra-se organizado em seis sessões laboratoriais, que documentam a evolução das competências desenvolvidas ao longo da formação.
 
@@ -60,10 +60,10 @@ O portfólio encontra-se organizado em seis sessões laboratoriais, que document
 |[05](./sessao-05/) | **Análise de Vulnerabilidades em Linux com Lynis** | Auditoria de segurança, identificação de vulnerabilidades e recomendações de hardening |
 |[06](./sessao-06/) | **Auditoria & PenTest — Linux Agency** | PenTest, escalada de privilégios, auditoria técnica e hardening |
 
-> 📌 Cada sessão contém documentação técnica das atividades realizadas, metodologia aplicada, resultados, evidências laboratoriais e respetivas conclusões.
+> Cada sessão contém documentação técnica das atividades realizadas, metodologia aplicada, resultados, evidências laboratoriais e respetivas conclusões.
 
 
-## 🧪 Áreas Exploradas
+## Áreas Exploradas
 
 As atividades laboratoriais permitiram explorar diferentes domínios da cibersegurança, combinando análise técnica, segurança defensiva, auditoria e investigação de sistemas.
 
@@ -78,9 +78,9 @@ As atividades laboratoriais permitiram explorar diferentes domínios da ciberseg
 | **Auditoria de Segurança** | Avaliação de configurações e vulnerabilidades em ambientes Linux com ferramentas como Lynis |
 | **PenTest** | Avaliação prática de segurança, identificação de vulnerabilidades e análise de escalada de privilégios |
 
-> 💡 Estas áreas representam competências desenvolvidas em ambientes laboratoriais controlados, com foco na aprendizagem prática e na aplicação responsável de técnicas de cibersegurança.
+> Estas áreas representam competências desenvolvidas em ambientes laboratoriais controlados, com foco na aprendizagem prática e na aplicação responsável de técnicas de cibersegurança.
 
-## 📚 Competências Desenvolvidas
+## Competências Desenvolvidas
 
 Ao longo das sessões laboratoriais, desenvolvi competências técnicas e analíticas que me permitiram aplicar, de forma prática, conceitos fundamentais de cibersegurança.
 
@@ -93,11 +93,11 @@ Ao longo das sessões laboratoriais, desenvolvi competências técnicas e analí
 - **Documentação técnica** - elaboração de relatórios estruturados com metodologia, evidências, resultados e conclusões;
 - **Pensamento analítico e resolução de problemas** - desenvolvimento de uma abordagem sistemática perante diferentes cenários laboratoriais de segurança.
 
-> 🎯 Estas competências refletem a evolução do meu percurso de aprendizagem, combinando conhecimentos teóricos com experiência prática em ambientes laboratoriais controlados.
+> Estas competências refletem a evolução do meu percurso de aprendizagem, combinando conhecimentos teóricos com experiência prática em ambientes laboratoriais controlados.
 
 
 
-## ⚖️ Utilização Ética
+## Utilização Ética
 
 Todas as atividades documentadas neste repositório foram realizadas para **fins educativos e em ambientes laboratoriais controlados**.
 
@@ -107,7 +107,7 @@ As ferramentas, técnicas e procedimentos apresentados devem ser utilizados apen
 
 <div align="center">
 
-### 🔐 Aprender • Testar • Documentar • Evoluir
+### Aprender • Testar • Documentar • Evoluir
 
 **Portfólio de aprendizagem em Cibersegurança**
 
