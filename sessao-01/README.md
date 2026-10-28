@@ -205,7 +205,7 @@ Esta secção descreve meticulosamente a execução prática, a teoria dos proto
 
 ---
 
-## 🏁 4. Considerações Finais e Conclusão Técnica
+## 4. Considerações Finais e Conclusão Técnica
 
 A execução prática deste laboratório consolidou a importância crítica da fase de **Reconhecimento Ativo e Enumeração** dentro do ciclo de vida de um teste de intrusão profissional (alinhado com frameworks de mercado como o *PTES* e *OWASP*). Esta fase, que frequentemente representa mais de 70% do esforço de uma auditoria, dita diretamente o sucesso ou fracasso das etapas subsequentes de exploração.
 
